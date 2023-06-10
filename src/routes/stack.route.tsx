@@ -1,6 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {LoginScreen} from '../pages/stack/login'
-import { TabRoutes } from './tab.route';
 import { DrawerRoutes } from './drawer.route';
 
 const Stack = createNativeStackNavigator();
