@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {LoginScreen} from '../../pages/stack/login'
-import {HomeScreen} from '../../pages/stack/home'
-import { Item1Screen } from '../../pages/tab/item1';
+import {LoginScreen} from '../pages/stack/login'
+import { TabRoutes } from './tab.route';
+import { DrawerRoutes } from './drawer.route';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,24 +12,21 @@ export function StackRoutes() {
         screenOptions = {{
           headerShown: false
         }}
-        
       >
         <Stack.Screen 
-          name="Login" 
+          name="login" 
           component={LoginScreen} 
           options={{ 
-            title: 'Login'
+            title: 'login'
           }}
-          
         />
         <Stack.Screen
-          name="Home"
-          component={HomeScreen}
+          name="start-drawer"
+          component={DrawerRoutes}
           options={{
-            title: 'Home',
+            title: 'start-drawer',
           }}
         />
-        
       </Stack.Navigator>
   );
 }

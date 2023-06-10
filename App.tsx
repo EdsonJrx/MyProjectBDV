@@ -1,11 +1,9 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { StackRoutes } from './src/routes/stack';
+import 'react-native-gesture-handler';
+import { Routes } from './src/routes';
 
 function App() {
   return (
-    <NavigationContainer>
-      <StackRoutes/>
-    </NavigationContainer>
+    <Routes/>
   );
 }
 
