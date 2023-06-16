@@ -5,7 +5,7 @@ export function LoginScreen({ navigation }) {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Login Screen</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('start-drawer')}>
+        <TouchableOpacity onPress={() => navigation.push('start-drawer')}>
             <Text>Home Screen</Text>
         </TouchableOpacity>
         
