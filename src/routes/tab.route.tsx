@@ -9,14 +9,14 @@ import IconProfile from '../components/iconProfile';
 
 const Tab = createBottomTabNavigator();
 
-export function TabRoutes() {
+export default function TabRoutes({navigation}) {
   return (
       <Tab.Navigator 
         initialRouteName="home"
         screenOptions = {{
           headerShown: true,
           tabBarActiveTintColor: '#e91e63',
-          headerRight:()=>(<IconProfile />)
+          headerRight:()=>(<IconProfile navigation={navigation}  />)
         }}
       >
         <Tab.Screen 
