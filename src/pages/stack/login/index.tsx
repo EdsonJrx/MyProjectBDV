@@ -1,10 +1,13 @@
 import * as React from 'react';
 import { View, Text, TouchableOpacity} from 'react-native';
+import Logo from '../../../assets/Engepar.svg'
+import InputLogin from '../../../components/InputLogin';
 
 export default function LoginScreen({ navigation }) {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Login Screen</Text>
+        <Logo width={128} height={150}></Logo>
+        <InputLogin/>
         <TouchableOpacity 
         onPress={() => 
             navigation.reset({
