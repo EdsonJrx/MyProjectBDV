@@ -10,7 +10,7 @@ export const Container = styled.View`
     margin-right:20px;
 `
 export const Button = styled.TouchableOpacity`
-    //background-color: ${({ theme }) => theme.COLORS.BACKGROUND};
+    
 `
 export const Text = styled.Text`
     width:100px;
