@@ -1,9 +1,16 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NativeStackNavigationProp, createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from '../pages/stack/login'
-import TabRoutes from './tab.route';
+import { TabRoutes } from './tab.route';
 import ProfileScreen from '../pages/stack/profile';
 
 const Stack = createNativeStackNavigator();
+
+type StackNavigation = {
+  login: undefined;
+  start_drawer: undefined;
+  profile:undefined;
+};
+export type StackTypes = NativeStackNavigationProp<StackNavigation>;
 
 export function StackRoutes() {
   return (
@@ -30,7 +37,7 @@ export function StackRoutes() {
           }}
         />
         <Stack.Screen
-          name="start-drawer"
+          name="start_drawer"
           component={TabRoutes}
           options={{
             title: 'Home',

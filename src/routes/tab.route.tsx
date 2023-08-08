@@ -1,4 +1,4 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {HomeScreen} from '../pages/tab/home'
 import {EquipamentsScreen} from '../pages/tab/equipaments'
 import { ConstructionsScreen } from '../pages/tab/constructions';
@@ -6,10 +6,20 @@ import { NewScreen } from '../pages/tab/new';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import ButtonNew  from '../components/buttonNew';
 import IconProfile from '../components/iconProfile';
+import { useNavigation } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 
-export default function TabRoutes({navigation}) {
+type TabNavigation = {
+  home: undefined;
+  equipaments: undefined;
+  constructions: undefined;
+  new: undefined;
+};
+export type TabTypes = BottomTabNavigationProp<TabNavigation>;
+
+export function TabRoutes() {
+  const navigation = useNavigation<TabTypes>();
   return (
       <Tab.Navigator 
         initialRouteName="home"
