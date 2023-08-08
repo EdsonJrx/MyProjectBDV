@@ -15,7 +15,7 @@ export default function LoginScreen() {
         <TouchableOpacity 
         onPress={() => 
             navigation.reset({
-                routes:[{name:'start-drawer'}]
+                routes:[{name:'start_drawer'}]
             })
         }>
             <Text>Home Screen</Text>
