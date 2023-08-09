@@ -10,7 +10,7 @@ export default function ProfileScreen(){
            <TouchableOpacity
             onPress={() => 
             navigation.reset({
-                routes:[{name:'login'}]
+                routes:[{name:'Login'}]
             })
             }>
                 <Text>Exit</Text>

@@ -1,36 +1,45 @@
 import { NativeStackNavigationProp, createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginScreen from '../pages/stack/login'
+import Login from '../screen/stack/Login'
 import { TabRoutes } from './tab.route';
-import ProfileScreen from '../pages/stack/profile';
+import Profile from '../screen/stack/Profile';
+import Preload from '../screen/stack/Preload';
 
 const Stack = createNativeStackNavigator();
 
 type StackNavigation = {
-  login: undefined;
+  Login: undefined;
   start_drawer: undefined;
-  profile:undefined;
+  Profile:undefined;
 };
 export type StackTypes = NativeStackNavigationProp<StackNavigation>;
 
 export function StackRoutes() {
   return (
       <Stack.Navigator 
-        initialRouteName="Login"
+        initialRouteName="Preload"
         screenOptions = {{
           headerShown: false
         }}
       >
         <Stack.Screen 
-          name="login" 
-          component={LoginScreen} 
+          name="Preload" 
+          component={Preload} 
           options={{ 
-            title: 'login',
+            title: 'Preload',
+            headerShown: false
+          }}
+        />
+        <Stack.Screen 
+          name="Login" 
+          component={Login} 
+          options={{ 
+            title: 'Login',
             headerShown: false
           }}
         />
         <Stack.Screen
           name="profile"
-          component={ProfileScreen}
+          component={Profile}
           options={{
             title: 'Profile',
             headerBackVisible: true

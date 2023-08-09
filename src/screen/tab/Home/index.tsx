@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { View, Text} from 'react-native';
+import { View, Text, TouchableOpacity} from 'react-native';
 
-export function EquipamentsScreen() {
+export default () => {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Equipaments</Text>
+            <Text>Home</Text>
         </View>
     );
 }

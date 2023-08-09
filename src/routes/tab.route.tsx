@@ -1,8 +1,8 @@
 import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {HomeScreen} from '../pages/tab/home'
-import {EquipamentsScreen} from '../pages/tab/equipaments'
-import { ConstructionsScreen } from '../pages/tab/constructions';
-import { NewScreen } from '../pages/tab/new';
+import Home from '../screen/tab/Home'
+import Equipaments from '../screen/tab/Equipaments'
+import Constructions from '../screen/tab/Constructions';
+import NewApointment from '../screen/tab/NewApointment';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import ButtonNew  from '../components/buttonNew';
 import IconProfile from '../components/iconProfile';
@@ -31,7 +31,7 @@ export function TabRoutes() {
       >
         <Tab.Screen 
           name="home" 
-          component={HomeScreen} 
+          component={Home} 
           options={{ 
             title: 'home',
             tabBarLabel: 'Home',
@@ -42,7 +42,7 @@ export function TabRoutes() {
         />
         <Tab.Screen
           name="equipaments"
-          component={EquipamentsScreen}
+          component={Equipaments}
           options={{
             title: 'equipaments',
             tabBarLabel: 'Equipamentos',
@@ -53,7 +53,7 @@ export function TabRoutes() {
         />
         <Tab.Screen
           name="constructions"
-          component={ConstructionsScreen}
+          component={Constructions}
           options={{
             title: 'constructions',
             tabBarLabel: 'Obras',
@@ -64,7 +64,7 @@ export function TabRoutes() {
         />
         <Tab.Screen
           name="new"
-          component={NewScreen}
+          component={NewApointment}
           options={{
             title: 'new',
             tabBarLabel: '',

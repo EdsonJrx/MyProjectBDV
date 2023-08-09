@@ -4,7 +4,7 @@ export default {
 
         PRIMARY_900: '#004682',
         PRIMARY_800: '#323644',
-        PRIMARY_700: '#8F94A3',
+        PRIMARY_700: '#d3d3d3',
 
         INFO: '#1D90F5',
 
