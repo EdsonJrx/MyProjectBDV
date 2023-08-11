@@ -31,7 +31,7 @@ export default ()=> {
         }
         
     }
-    
+
     const navigation = useNavigation<StackTypes>();
     
     return (
@@ -44,15 +44,14 @@ export default ()=> {
                     placeholder='Digite seu E-mail'
                     value={emailField}
                     onChangeText={t=>setEmailField(t)}
-                    password={false}
+                    
                 />
                 <InputLogin 
                     icon='lock'
-                    secondIcon='eye'
                     placeholder='Digite sua Senha'
                     value={passwordField}
                     onChangeText={t=>setPasswordField(t)}
-                    password={true}
+                    
                 />
 
                 <CustomButton onPress={handleLoginClick}>

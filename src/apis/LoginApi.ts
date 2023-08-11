@@ -27,14 +27,12 @@ export default {
             data : data
         };
 
-        const res = await axios.request(config)
+        axios.request(config)
         .then((response) => {
             console.log(JSON.stringify(response.data));
         })
         .catch((error) => {
             console.log(error.response.data);
         });
-        const resp = await res
-        return console.log(`resposta ${resp}`);
     }
 }

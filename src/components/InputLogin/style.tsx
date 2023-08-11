@@ -17,3 +17,5 @@ export const Input = styled.TextInput`
     color:#004682;
     margin-left:10px;
 `;
+export const Icone = styled.TouchableOpacity`
+`
