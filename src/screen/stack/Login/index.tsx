@@ -11,18 +11,26 @@ import {
 import InputLogin from '../../../components/InputLogin';
 import Logo from '../../../assets/Engepar.svg'
 
-import LoginApi from '../../../apis/LoginApi';
+import Api from '../../../apis/login/Api';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default ()=> {
-    const [emailField, setEmailField] = useState('');
-    const [passwordField, setPasswordField] = useState('');
+    const [emailField, setEmailField] = useState<string>('');
+    const [passwordField, setPasswordField] = useState<string>('');
 
-    const handleLoginClick = async () => {
+    async function handleLoginClick () {
         if(emailField != "" && passwordField != ""){
-            let res = await LoginApi.login(emailField, passwordField);
-            console.log(res)
+            let res = await Api.login(emailField, passwordField);
             if(res.access_token) {
-                alert('Deu certo!')
+                await AsyncStorage.setItem('token', res.access_token);
+                await AsyncStorage.setItem('refresh_token', res.refresh_token);
+                await AsyncStorage.setItem('username', emailField);
+                
+                //save email nome ususario no context
+
+                navigation.reset({
+                    routes:[{name:'Home'}],
+                })
             } else {
                 alert('E-mail e/ou senha errados!')
             }

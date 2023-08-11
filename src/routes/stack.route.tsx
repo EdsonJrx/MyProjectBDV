@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator();
 
 type StackNavigation = {
   Login: undefined;
-  start_drawer: undefined;
+  Home: undefined;
   Profile:undefined;
 };
 export type StackTypes = NativeStackNavigationProp<StackNavigation>;
@@ -46,7 +46,7 @@ export function StackRoutes() {
           }}
         />
         <Stack.Screen
-          name="start_drawer"
+          name="Home"
           component={TabRoutes}
           options={{
             title: 'Home',
