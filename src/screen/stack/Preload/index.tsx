@@ -20,7 +20,7 @@ export default () => {
             let res = await Api.checkToken(token, username)
             if(res.items) {
 
-                //save email nome ususario no context
+                //save email nome ususario no contextt
 
                 navigation.reset({
                     routes:[{name:'Home'}],
