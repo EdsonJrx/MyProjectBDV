@@ -32,7 +32,7 @@ export default ()=> {
                     routes:[{name:'Home'}],
                 })
             } else {
-                alert('E-mail e/ou senha errados!')
+                alert('Usuario e/ou senha errados!')
             }
         } else {
             alert('Preencha todos os campos');
@@ -49,17 +49,17 @@ export default ()=> {
             <InputArea>
                 <InputLogin
                     icon='email'
-                    placeholder='Digite seu E-mail'
+                    placeholder='Digite seu Usuário'
                     value={emailField}
                     onChangeText={t=>setEmailField(t)}
-                    
+                    password={false}
                 />
                 <InputLogin 
                     icon='lock'
                     placeholder='Digite sua Senha'
                     value={passwordField}
                     onChangeText={t=>setPasswordField(t)}
-                    
+                    password={true}
                 />
 
                 <CustomButton onPress={handleLoginClick}>

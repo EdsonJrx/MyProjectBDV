@@ -1,21 +1,26 @@
 import React, { FunctionComponent, useState } from 'react';
 import { InputArea, Input, Icone } from './style';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { TSecIcon } from './types';
 
 import { InputLoginProps } from './types';
 
-const InputLogin: FunctionComponent<InputLoginProps> = ({icon, placeholder, value, onChangeText}) => {
+const InputLogin: FunctionComponent<InputLoginProps> = ({ icon, placeholder, value, onChangeText, password}) => {
     
-    const [showPass, setShowPass] = useState(false);
-    const [secIcon, setSecIcon] = useState("eye");
+    const [showPass, setShowPass] = password? useState(true) : useState(false);
+    const [secIcon, setSecIcon]= password? useState<TSecIcon>("eye-off") : useState<TSecIcon>();
 
     const handleShowPassword = () => {
-        if(showPass){
-            setShowPass(!showPass);
-            setSecIcon("eye-off")
+        if(password){
+            if(showPass){
+                setShowPass(!showPass);
+                setSecIcon("eye")
+            }else{
+                setShowPass(!showPass);
+                setSecIcon("eye-off")
+            }
         }else{
-            setShowPass(!showPass);
-            setSecIcon("eye")
+            setSecIcon("")
         }
     }
     
