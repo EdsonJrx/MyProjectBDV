@@ -22,5 +22,8 @@ export const CustomButton = styled.TouchableOpacity`
 
 export const CustomButtonText = styled.Text`
     font-size:18px;
-    color:#FFF
+    color:#FFF;
+`;
+export const LoadingIcon = styled.ActivityIndicator`
+    margin-top: 5px;
 `;

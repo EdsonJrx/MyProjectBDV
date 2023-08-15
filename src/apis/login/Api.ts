@@ -3,21 +3,26 @@ const SERVICE_ALIAS = 'CorporeRM_Homol_Jul23'
 
 export default {
     login: async (userName:string, password:string) => {
-        const req = await fetch(`${BASE_API}/connect/token`, {
-        method:'POST',
-        headers:{
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-        },
-        body:JSON.stringify({
-            'grant_type': 'password',
-            'userName': `${userName}`,
-            'password': `${password}`,
-            'servicealias':`${SERVICE_ALIAS}`
-        })
-    });
-    const json = await req.json();
-    return json;
+        try{
+
+            const req = await fetch(`${BASE_API}/connect/token`, {
+                method:'POST',
+                headers:{
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body:JSON.stringify({
+                    'grant_type': 'password',
+                    'userName': `${userName}`,
+                    'password': `${password}`,
+                    'servicealias':`${SERVICE_ALIAS}`
+                })
+            });
+            const json = await req.json();
+            return json;
+        } catch (error) {
+            alert(error);
+        }
     },
     refreshToken: async (refresh_token:string|null) => {
         const req = await fetch(`${BASE_API}/connect/token/`, {

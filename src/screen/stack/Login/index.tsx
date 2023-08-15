@@ -5,7 +5,8 @@ import {
     Container,
     InputArea,
     CustomButton,
-    CustomButtonText
+    CustomButtonText,
+    LoadingIcon,
  } from './styles';
 
 import InputLogin from '../../../components/InputLogin';
@@ -17,27 +18,30 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export default ()=> {
     const [emailField, setEmailField] = useState<string>('');
     const [passwordField, setPasswordField] = useState<string>('');
+    const [loading, setLoading] = useState(false);
 
     async function handleLoginClick () {
-        if(emailField != "" && passwordField != ""){
-            let res = await Api.login(emailField, passwordField);
-            if(res.access_token) {
-                await AsyncStorage.setItem('token', res.access_token);
-                await AsyncStorage.setItem('refresh_token', res.refresh_token);
-                await AsyncStorage.setItem('username', emailField);
-                
-                //save email nome ususario no context
-
-                navigation.reset({
-                    routes:[{name:'Home'}],
-                })
+        try{
+            setLoading(true)
+            if(emailField != "" && passwordField != ""){
+                let res = await Api.login(emailField, passwordField);
+                if(res.access_token) {
+                    await AsyncStorage.setItem('token', res.access_token);
+                    await AsyncStorage.setItem('refresh_token', res.refresh_token);
+                    await AsyncStorage.setItem('username', emailField);
+                    
+                    //save email nome ususario no context
+                    
+                    navigation.reset({
+                        routes:[{name:'Home'}],
+                    })
+                } else {
+                    alert('Usuario e/ou senha errados!')
+                }
             } else {
-                alert('Usuario e/ou senha errados!')
+                alert('Preencha todos os campos');
             }
-        } else {
-            alert('Preencha todos os campos');
-        }
-        
+        } finally{setLoading(false)}
     }
 
     const navigation = useNavigation<StackTypes>();
@@ -63,7 +67,7 @@ export default ()=> {
                 />
 
                 <CustomButton onPress={handleLoginClick}>
-                    <CustomButtonText>LOGIN</CustomButtonText>
+                {loading? <LoadingIcon  size="large" color='#fff'/> : <CustomButtonText>LOGIN</CustomButtonText>}
                 </CustomButton>
 
             </InputArea>
