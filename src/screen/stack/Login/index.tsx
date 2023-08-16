@@ -66,8 +66,8 @@ export default ()=> {
                     password={true}
                 />
 
-                <CustomButton onPress={handleLoginClick}>
-                {loading? <LoadingIcon  size="large" color='#fff'/> : <CustomButtonText>LOGIN</CustomButtonText>}
+                <CustomButton disabled={loading} onPress={handleLoginClick} >
+                {loading? <LoadingIcon  size="small" color='#fff'/> : <CustomButtonText>LOGIN</CustomButtonText>}
                 </CustomButton>
 
             </InputArea>

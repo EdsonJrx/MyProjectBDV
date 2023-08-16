@@ -9,11 +9,11 @@ import dark from './src/theme/dark';
 
 function App() {
   return (
-    <UserContextProvider>
       <ThemeProvider theme={light}>
-        <Routes/>
-      </ThemeProvider>
-    </UserContextProvider>
+      <UserContextProvider>
+          <Routes/>
+      </UserContextProvider>
+    </ThemeProvider>
   );
 }
 

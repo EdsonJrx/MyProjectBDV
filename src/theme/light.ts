@@ -9,6 +9,6 @@ export default {
         INFO: '#1D90F5',
 
         TEXT_PRIMARY: '#FFF',
-        TEXT_SECONDARY:'#080808',
+
     }
 }
