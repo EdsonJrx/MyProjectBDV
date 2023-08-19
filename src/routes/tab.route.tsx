@@ -5,17 +5,18 @@ import Constructions from '../screen/tab/Constructions';
 import NewApointment from '../screen/tab/NewApointment';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import ButtonNew  from '../components/buttonNew';
-import IconProfile from '../components/iconProfile';
+import IconNotification from '../components/iconNotification';
 import { useNavigation } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 
 type TabNavigation = {
-  home: undefined;
+  bdvs: undefined;
   equipaments: undefined;
   constructions: undefined;
   new: undefined;
   user: undefined;
+  profile: undefined;
 };
 export type TabTypes = BottomTabNavigationProp<TabNavigation>;
 
@@ -23,11 +24,11 @@ export function TabRoutes() {
   const navigation = useNavigation<TabTypes>();
   return (
       <Tab.Navigator 
-        initialRouteName="home"
+        initialRouteName="bdvs"
         screenOptions = {{
           headerShown: true,
           tabBarActiveTintColor: '#fff',
-          headerRight:()=>(<IconProfile navigation={navigation}/>),
+          headerRight:()=>(<IconNotification/>),
           headerStyle: {
             backgroundColor: '#004682',
           },
@@ -41,7 +42,7 @@ export function TabRoutes() {
         }}
       >
         <Tab.Screen 
-          name="home" 
+          name="bdvs" 
           component={Home} 
           options={{ 
             title: 'BDVs',
@@ -68,8 +69,8 @@ export function TabRoutes() {
             options={{
               title: 'new',
               tabBarLabel: '',
-              tabBarIcon: ({ size, focused }) => (
-                <ButtonNew size={size} focused={focused}/>
+              tabBarIcon: ({ size}) => (
+                <ButtonNew size={size}/>
               ),
             }}
           />

@@ -7,8 +7,13 @@ export default {
         PRIMARY_700: '#d3d3d3',
 
         INFO: '#1D90F5',
+        NOTIFICATION:'#F00',
+        
+        BUTTON_NEW:'#E6B300',
+
 
         TEXT_PRIMARY: '#FFF',
+
 
     }
 }

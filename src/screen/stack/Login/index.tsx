@@ -19,6 +19,7 @@ export default ()=> {
     const [emailField, setEmailField] = useState<string>('');
     const [passwordField, setPasswordField] = useState<string>('');
     const [loading, setLoading] = useState(false);
+    const navigation = useNavigation<StackTypes>();
 
     async function handleLoginClick () {
         try{
@@ -43,8 +44,6 @@ export default ()=> {
             }
         } finally{setLoading(false)}
     }
-
-    const navigation = useNavigation<StackTypes>();
     
     return (
         <Container>

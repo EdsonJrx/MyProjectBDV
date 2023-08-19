@@ -7,22 +7,22 @@ import Preload from '../screen/stack/Preload';
 const Stack = createNativeStackNavigator();
 
 type StackNavigation = {
-  Login: undefined;
-  Home: undefined;
-  Profile:undefined;
+  login: undefined;
+  home: undefined;
+  profile:undefined;
 };
 export type StackTypes = NativeStackNavigationProp<StackNavigation>;
 
 export function StackRoutes() {
   return (
       <Stack.Navigator 
-        initialRouteName="Home"
+        initialRouteName="home"
         screenOptions = {{
           headerShown: false
         }}
       >
         <Stack.Screen 
-          name="Preload" 
+          name="preload" 
           component={Preload} 
           options={{ 
             title: 'Preload',
@@ -30,7 +30,7 @@ export function StackRoutes() {
           }}
         />
         <Stack.Screen 
-          name="Login" 
+          name="login" 
           component={Login} 
           options={{ 
             title: 'Login',
@@ -46,7 +46,7 @@ export function StackRoutes() {
           }}
         />
         <Stack.Screen
-          name="Home"
+          name="home"
           component={TabRoutes}
           options={{
             title: 'Home',

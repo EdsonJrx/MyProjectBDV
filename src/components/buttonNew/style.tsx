@@ -1,15 +1,11 @@
-import { StyleSheet } from 'react-native';
+import styled from "styled-components/native";
 
-const styles = StyleSheet.create({
-    container:{
-        width:60,
-        height:60,
-        borderRadius:30,
-        backgroundColor:"#3eccff",
-        alignItems:'center',
-        justifyContent:'center',
-        marginBottom:20,
-    }
-})
-
-export default styles;
+export const Container = styled.View`
+    width:60px;
+    height:60px;
+    border-Radius:30px;
+    background-Color:${({ theme })=>theme.COLORS.BUTTON_NEW};
+    align-Items:center;
+    justify-Content:center;
+    margin-Bottom:20px;
+`
