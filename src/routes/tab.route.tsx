@@ -15,6 +15,7 @@ type TabNavigation = {
   equipaments: undefined;
   constructions: undefined;
   new: undefined;
+  user: undefined;
 };
 export type TabTypes = BottomTabNavigationProp<TabNavigation>;
 
@@ -25,16 +26,26 @@ export function TabRoutes() {
         initialRouteName="home"
         screenOptions = {{
           headerShown: true,
-          tabBarActiveTintColor: '#e91e63',
-          headerRight:()=>(<IconProfile navigation={navigation}  />)
+          tabBarActiveTintColor: '#fff',
+          headerRight:()=>(<IconProfile navigation={navigation}/>),
+          headerStyle: {
+            backgroundColor: '#004682',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          tabBarStyle:{
+            backgroundColor: '#004682',
+          }
         }}
       >
         <Tab.Screen 
           name="home" 
           component={Home} 
           options={{ 
-            title: 'home',
-            tabBarLabel: 'Home',
+            title: 'BDVs',
+            tabBarLabel: 'BDVs',
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="home" size={size} color={color}  />
             ),
@@ -44,18 +55,29 @@ export function TabRoutes() {
           name="equipaments"
           component={Equipaments}
           options={{
-            title: 'equipaments',
+            title: 'Equipamentos',
             tabBarLabel: 'Equipamentos',
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="tanker-truck" size={size} color={color} />
             ),
           }}
         />
+          <Tab.Screen
+            name="new"
+            component={NewApointment}
+            options={{
+              title: 'new',
+              tabBarLabel: '',
+              tabBarIcon: ({ size, focused }) => (
+                <ButtonNew size={size} focused={focused}/>
+              ),
+            }}
+          />
         <Tab.Screen
           name="constructions"
           component={Constructions}
           options={{
-            title: 'constructions',
+            title: 'Obras',
             tabBarLabel: 'Obras',
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="office-building-marker" size={size} color={color} />
@@ -63,13 +85,13 @@ export function TabRoutes() {
           }}
         />
         <Tab.Screen
-          name="new"
-          component={NewApointment}
+          name="User"
+          component={Constructions}
           options={{
-            title: 'new',
-            tabBarLabel: '',
-            tabBarIcon: ({ size, focused }) => (
-              <ButtonNew size={size} focused={focused}/>
+            title: 'Usuario',
+            tabBarLabel: 'Usuário',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="account-circle" size={size} color={color} />
             ),
           }}
         />
