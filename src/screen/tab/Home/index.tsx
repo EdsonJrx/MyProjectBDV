@@ -1,10 +1,23 @@
-import * as React from 'react';
-import { View, Text, TouchableOpacity} from 'react-native';
+import React, { useState } from 'react';
+import * as S from './style'
+import Search from '../../../components/search';
+import AppointmentList from '../../../components/appointList';
 
 export default () => {
+    const [inputField, setInputField] = useState('')
+    
+    const handleClear = () => {
+        setInputField('')
+    }
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Home</Text>
-        </View>
+        <S.Container>
+            <Search 
+                placeholder='Buscar'
+                onChangeText={t=>setInputField(t)}
+                value={inputField}
+                handleClear={handleClear}
+            />
+            <AppointmentList/>
+        </S.Container>
     );
 }

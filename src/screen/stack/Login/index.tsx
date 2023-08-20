@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { StackTypes } from '../../../routes/stack.route';
-import { 
-    Container,
-    InputArea,
-    CustomButton,
-    CustomButtonText,
-    LoadingIcon,
- } from './styles';
+import * as S from './styles';
 
 import InputLogin from '../../../components/InputLogin';
 import Logo from '../../../assets/Engepar.svg'
@@ -34,7 +28,7 @@ export default ()=> {
                     //save email nome ususario no context
                     
                     navigation.reset({
-                        routes:[{name:'Home'}],
+                        routes:[{name:'home'}],
                     })
                 } else {
                     alert('Usuario e/ou senha errados!')
@@ -46,10 +40,10 @@ export default ()=> {
     }
     
     return (
-        <Container>
+        <S.Container>
             <Logo width="128" height="150"/>
 
-            <InputArea>
+            <S.InputArea>
                 <InputLogin
                     icon='email'
                     placeholder='Digite seu Usuário'
@@ -65,11 +59,11 @@ export default ()=> {
                     password={true}
                 />
 
-                <CustomButton disabled={loading} onPress={handleLoginClick} >
-                {loading? <LoadingIcon  size="small" color='#fff'/> : <CustomButtonText>LOGIN</CustomButtonText>}
-                </CustomButton>
+                <S.CustomButton disabled={loading} onPress={handleLoginClick} >
+                {loading? <S.LoadingIcon  size="small" color='#fff'/> : <S.CustomButtonText>LOGIN</S.CustomButtonText>}
+                </S.CustomButton>
 
-            </InputArea>
-        </Container>
+            </S.InputArea>
+        </S.Container>
     );
 }
