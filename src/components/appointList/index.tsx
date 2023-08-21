@@ -4,9 +4,10 @@ import * as S from './style';
 
 import AppointsItem from '../appointsItem';
 import ButtonAppoints from '../buttonAppoints';
+import { IAppointments } from './types';
 
 
-const AppointmentList = () => {
+const AppointmentList = ({data}:{data:IAppointments}) => {
     return (
         <S.Container>
             <S.DateArea>
@@ -15,26 +16,26 @@ const AppointmentList = () => {
                 <S.DateYYYY>2023</S.DateYYYY>
             </S.DateArea>
             <S.BodyArea>
-                <S.CodCC>2.0337</S.CodCC>
-                <S.DescCC>Hospital Regional de Dourados Matogrosso do sul</S.DescCC>
+                <S.CodCC>{data.CODCCUSTO}</S.CodCC>
+                <S.DescCC>{data.IDPRJ}</S.DescCC>
                 <S.AppointsArea>
                     <AppointsItem
-                        valor="100" 
+                        valor={data.HORIMETRO} 
                         color="#f00"
                         title="Inicial"
                     />
                     <AppointsItem 
-                        valor="150"
+                        valor={data.HORIMETROFIM}
                         color="#0f0"
                         title="Final"
                     />
                     <AppointsItem
-                        valor="50" 
+                        valor={data.HORIMETRO - data.HORIMETROFIM} 
                         color="#00f"
                         title="Rod"
                     />
                 </S.AppointsArea>
-                <S.Obs>Primeiro lançamento</S.Obs>  
+                <S.Obs>{data.OBSERVACAO}</S.Obs>  
             </S.BodyArea>
             <S.ButtonAppointsArea>
                 <ButtonAppoints 

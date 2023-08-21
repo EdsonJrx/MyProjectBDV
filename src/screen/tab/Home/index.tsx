@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import * as S from './style'
 import Search from '../../../components/search';
 import AppointmentList from '../../../components/appointList';
+import { FlatList } from 'react-native'
+import { DATA } from '../../../apis/appointment/seed';
 
 export default () => {
     const [inputField, setInputField] = useState('')
@@ -17,7 +19,9 @@ export default () => {
                 value={inputField}
                 handleClear={handleClear}
             />
-            <AppointmentList/>
+            <AppointmentList 
+                data={DATA}
+            />
         </S.Container>
     );
 }
