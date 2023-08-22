@@ -1,13 +1,18 @@
 export interface IAppointments {
-    "CODCOLIGADA": string;
+    "id":string;
+    "CODCOLIGADA": number;
     "IDPRJ": number;
     "IDTRF": number;
+    "IDAPONTAMENTO": number,
     "CODCCUSTO": string;
     "DATAHORAINICIO": Date;
     "DATAHORAFIM": Date;
     "HORIMETRO": number;
     "IDMOTIVO": number;
     "CODUSUARIO": string;
+    "CODCOLCOLETOR": number;
+    "IDAPROPRIACAO": number;
+	"IDCOLETOR": number;
     "STATUS": string;
     "OBSERVACAO": string;
     "IDPATRIMONIO": number;

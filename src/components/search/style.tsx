@@ -3,13 +3,14 @@ import styled from 'styled-components/native'
 export const InputArea = styled.View`
     width: 100%;
     height: 50px;
-    background-color: ${({ theme })=> theme.COLORS.PRIMARY_700};
+    background-color: ${({ theme })=> theme.COLORS.BACKGROUND};
     flex-direction: row;
     border-radius: 30px;
     padding-left: 15px;
     padding-right: 15px;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
 `;
 export const Input = styled.TextInput`
     flex:1;

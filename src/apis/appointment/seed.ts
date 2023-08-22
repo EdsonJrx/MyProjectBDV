@@ -1,43 +1,6 @@
 
 export const DATA =  [
     {
-        "id": "1|4147|1",
-        "CODCOLIGADA": 1,
-        "IDPRJ": 4147,
-        "IDAPONTAMENTO": 1,
-        "IDTRF": 251,
-        "CODCCUSTO": "2.0385",
-        "CODUSUARIO": "edson.junior",
-        "OBSERVACAO": "teste"
-    },
-    {
-        "id": "1|4147|2",
-        "CODCOLIGADA": 1,
-        "IDPRJ": 4147,
-        "IDAPONTAMENTO": 2,
-        "IDTRF": 141,
-        "CODUSUARIO": "edson.junior",
-        "IDPATRIMONIO": 90
-    },
-    {
-        "id": "1|4147|4",
-        "CODCOLIGADA": 1,
-        "IDPRJ": 4147,
-        "IDAPONTAMENTO": 4,
-        "IDTRF": 141,
-        "CODUSUARIO": "edson.junior",
-        "IDPATRIMONIO": 13
-    },
-    {
-        "id": "1|4147|5",
-        "CODCOLIGADA": 1,
-        "IDPRJ": 4147,
-        "IDAPONTAMENTO": 5,
-        "IDTRF": 141,
-        "CODUSUARIO": "edson.junior",
-        "IDPATRIMONIO": 13
-    },
-    {
         "id": "1|4147|6",
         "CODCOLIGADA": 1,
         "IDPRJ": 4147,
@@ -47,6 +10,7 @@ export const DATA =  [
         "DATAHORAINICIO": "2023-08-18T18:31:08.037",
         "DATAHORAFIM": "2023-08-25T18:31:08.037",
         "HORIMETRO": 10000.0,
+        "HORIMETROFIM": 10500.0,
         "IDMOTIVO": 1,
         "CODUSUARIO": "edson.junior",
         "STATUS": "1",

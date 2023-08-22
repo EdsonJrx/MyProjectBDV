@@ -4,14 +4,14 @@ import * as S from './style';
 
 import AppointsItem from '../appointsItem';
 import ButtonAppoints from '../buttonAppoints';
-import { IAppointments } from './types';
+import { IAppointments } from '../../apis/appointment/types';
 
 
 const AppointmentList = ({data}:{data:IAppointments}) => {
     return (
         <S.Container>
             <S.DateArea>
-                <S.DateDD>19</S.DateDD>
+                <S.DateDD>31</S.DateDD>
                 <S.DateMM>Ago</S.DateMM>
                 <S.DateYYYY>2023</S.DateYYYY>
             </S.DateArea>
@@ -24,24 +24,23 @@ const AppointmentList = ({data}:{data:IAppointments}) => {
                         color="#f00"
                         title="Inicial"
                     />
-                    <AppointsItem 
+                    {data.HORIMETROFIM && <AppointsItem 
                         valor={data.HORIMETROFIM}
                         color="#0f0"
                         title="Final"
-                    />
-                    <AppointsItem
-                        valor={data.HORIMETRO - data.HORIMETROFIM} 
+                    />}
+                    {data.HORIMETROFIM && <AppointsItem
+                        valor={data.HORIMETROFIM - data.HORIMETRO} 
                         color="#00f"
                         title="Rod"
-                    />
+                    />}
                 </S.AppointsArea>
                 <S.Obs>{data.OBSERVACAO}</S.Obs>  
             </S.BodyArea>
             <S.ButtonAppointsArea>
                 <ButtonAppoints 
                     nome="md-checkmark-sharp"
-                    color="#0f0"
-                    
+                    color="#0f0" 
                 />
                 <ButtonAppoints 
                     nome="trash"
