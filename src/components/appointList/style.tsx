@@ -44,6 +44,7 @@ export const DescCC = styled.Text`
     flex:1;
     font-size:18px;
     margin-top:-5px;
+    height:10px
 `;
 export const AppointsArea = styled.View`
     flex:1;

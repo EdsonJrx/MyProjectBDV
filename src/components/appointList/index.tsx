@@ -1,5 +1,5 @@
 import React from 'react';
-
+import moment from 'moment';
 import * as S from './style';
 
 import AppointsItem from '../appointsItem';
@@ -11,13 +11,13 @@ const AppointmentList = ({data}:{data:IAppointments}) => {
     return (
         <S.Container>
             <S.DateArea>
-                <S.DateDD>31</S.DateDD>
-                <S.DateMM>Ago</S.DateMM>
-                <S.DateYYYY>2023</S.DateYYYY>
+                <S.DateDD>{moment(data.DATAHORAINICIO).day()}</S.DateDD>
+                <S.DateMM>{moment(data.DATAHORAINICIO).month()}</S.DateMM>
+                <S.DateYYYY>{moment(data.DATAHORAINICIO).year()}</S.DateYYYY>
             </S.DateArea>
             <S.BodyArea>
                 <S.CodCC>{data.CODCCUSTO}</S.CodCC>
-                <S.DescCC>{data.IDPRJ}</S.DescCC>
+                <S.DescCC>{data.DESCRICAO}</S.DescCC>
                 <S.AppointsArea>
                     <AppointsItem
                         valor={data.HORIMETRO} 

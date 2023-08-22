@@ -23,28 +23,23 @@ export default () => {
                 //save email nome ususario no contextt
 
                 navigation.reset({
-                    routes:[{name:'Home'}],
+                    routes:[{name:'home'}],
                 })
-
-                console.log('valido')
             } else if (res.Code){
                 let res = await Api.refreshToken(refresh_token)
-                console.log('refresh')
-                console.log(refresh_token)
                 if(res.access_token) {
                     await AsyncStorage.setItem('token', res.access_token);
                     await AsyncStorage.setItem('refresh_token', res.refresh_token);
 
                     navigation.reset({
-                        routes:[{name:'Home'}],
+                        routes:[{name:'home'}],
                     })
-                    console.log('regerou')
                 } else{
-                    navigation.navigate('Login')
+                    navigation.navigate('login')
                 }
             }
         } else {
-            navigation.navigate('Login');
+            navigation.navigate('login');
         }
     } 
 

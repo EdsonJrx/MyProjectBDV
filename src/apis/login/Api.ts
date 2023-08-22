@@ -37,7 +37,6 @@ export default {
         })
     });
     const json = await req.json();
-    console.log(json)
     return json;
     },
     checkToken: async (token:string, username:string|null) => {
