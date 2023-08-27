@@ -16,7 +16,7 @@ export type StackTypes = NativeStackNavigationProp<StackNavigation>;
 export function StackRoutes() {
   return (
       <Stack.Navigator 
-        initialRouteName="preload"
+        initialRouteName="home"
         screenOptions = {{
           headerShown: false
         }}

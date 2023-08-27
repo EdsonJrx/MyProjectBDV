@@ -4,12 +4,13 @@ export const Container = styled.TouchableOpacity`
     width:30px;
     height:30px;
     border-Radius:15px;
-    background-Color:${({theme})=>theme.COLORS.BACKGROUND};
     align-Items:flex-end;
-    justify-Content:flex-start;
+    justify-Content:center;
     margin-right:20px;
 `
 export const Note = styled.View`
+    position:absolute;
+    top:0;
     width:10px;
     height:10px;
     border-Radius:5px;

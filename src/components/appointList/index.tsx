@@ -1,18 +1,19 @@
 import React from 'react';
 import moment from 'moment';
+import 'moment/locale/pt-br'
 import * as S from './style';
 
 import AppointsItem from '../appointsItem';
 import ButtonAppoints from '../buttonAppoints';
 import { IAppointments } from '../../apis/appointment/types';
 
-
+moment.locale('pt-br')
 const AppointmentList = ({data}:{data:IAppointments}) => {
     return (
         <S.Container>
             <S.DateArea>
-                <S.DateDD>{moment(data.DATAHORAINICIO).day()}</S.DateDD>
-                <S.DateMM>{moment(data.DATAHORAINICIO).month()}</S.DateMM>
+                <S.DateDD>{moment(data.DATAHORAINICIO).format("DD")}</S.DateDD>
+                <S.DateMM>{moment(data.DATAHORAINICIO).format('MMM')}</S.DateMM>
                 <S.DateYYYY>{moment(data.DATAHORAINICIO).year()}</S.DateYYYY>
             </S.DateArea>
             <S.BodyArea>

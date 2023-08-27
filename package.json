@@ -24,7 +24,8 @@
     "react-native-screens": "~3.22.0",
     "react-native-svg": "13.9.0",
     "react-native-svg-transformer": "^1.0.0",
-    "styled-components": "^5.3.10"
+    "styled-components": "^5.3.10",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
