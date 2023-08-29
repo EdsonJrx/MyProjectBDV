@@ -6,11 +6,12 @@ import * as S from './style';
 import AppointsItem from '../appointsItem';
 import ButtonAppoints from '../buttonAppoints';
 import { IAppointments } from '../../apis/appointment/types';
+import { SheetManager } from 'react-native-actions-sheet';
 
 moment.locale('pt-br')
 const AppointmentList = ({data}:{data:IAppointments}) => {
     return (
-        <S.Container>
+        <S.Container onPress={()=>{SheetManager.show("appointment-detail")}}>
             <S.DateArea>
                 <S.DateDD>{moment(data.DATAHORAINICIO).format("DD")}</S.DateDD>
                 <S.DateMM>{moment(data.DATAHORAINICIO).format('MMM')}</S.DateMM>
