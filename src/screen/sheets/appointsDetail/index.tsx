@@ -15,8 +15,10 @@ export default( props: SheetProps ) =>{
             drawUnderStatusBar={false}
             gestureEnabled={true}
             defaultOverlayOpacity={0.3}
+            indicatorStyle={{
+                backgroundColor:'#004682',
+            }}
             containerStyle={{
-                backgroundColor:'blue',
                 height:'90%',
             }}
         >

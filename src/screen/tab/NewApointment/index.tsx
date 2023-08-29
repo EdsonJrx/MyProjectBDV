@@ -7,4 +7,5 @@ export default () => {
             <Text>New</Text>
         </View>
     );
+    
 }

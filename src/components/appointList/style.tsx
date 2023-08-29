@@ -7,7 +7,10 @@ export const Container = styled.TouchableOpacity`
     background-color:${({theme})=>theme.COLORS.BACKGROUND};
     border-radius:15px;
     padding-right:5px;
-    box-shadow: 2px 5px 5px rgba(0,0,0,0.1);
+    shadow-color: #000;
+    shadow-offset: 5px 5px;
+    shadow-opacity: 0.1;
+    elevation: 5;
 `;
 export const DateArea = styled.View`
     width:28px;

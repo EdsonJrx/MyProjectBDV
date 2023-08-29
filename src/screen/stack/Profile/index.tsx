@@ -11,7 +11,7 @@ export default function ProfileScreen(){
         AsyncStorage.removeItem('token');
         AsyncStorage.removeItem('username');
         navigation.reset({
-            routes:[{name:'Login'}]
+            routes:[{name:'login'}]
         });
     }
     const navigation = useNavigation<StackTypes>();

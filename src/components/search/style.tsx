@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 
 export const InputArea = styled.View`
-    width: 100%;
+    flex:1;
     height: 50px;
     background-color: ${({ theme })=> theme.COLORS.BACKGROUND};
     flex-direction: row;
@@ -10,7 +10,10 @@ export const InputArea = styled.View`
     padding-right: 15px;
     align-items: center;
     margin-bottom: 15px;
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+    shadow-color: #000;
+    shadow-offset: 5px 5px;
+    shadow-opacity: 0.1;
+    elevation: 5;
 `;
 export const Input = styled.TextInput`
     flex:1;

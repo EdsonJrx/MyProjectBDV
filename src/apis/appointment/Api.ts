@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 const BASE_API = 'http://10.55.0.10:8053/api';
 const CODSENTENCA = 'Z01.1.1'
 const COLIGADA = '0'

@@ -83,7 +83,7 @@ export default () => {
                 <Animated.Text style={{
                 top:TextPos,
                 width:'100%',
-                height:32,
+                height:45,
                 fontSize:32,
                 fontWeight:'bold',
                 color:'#004682',
@@ -91,7 +91,7 @@ export default () => {
                 >BDVs</Animated.Text>
 
             </Animated.View>
-            <FlatList style={{width:'100%', paddingTop:40,paddingRight:20, paddingLeft:20}}
+            <FlatList style={{width:'100%', paddingTop:45,paddingRight:20, paddingLeft:20}}
                 ListHeaderComponent={ <Header/>}
                 keyExtractor={item => item.id}
                 data={DATA}
