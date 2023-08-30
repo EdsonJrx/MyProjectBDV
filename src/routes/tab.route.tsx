@@ -68,7 +68,8 @@ export function TabRoutes() {
         name="new"
         component={NewApointment}
         options={{
-          tabBarLabel: '',
+          tabBarStyle: {display:'none'},
+          headerShown:false,
           tabBarIcon: ({ size }) => (
             <ButtonNew size={size} />
           ),

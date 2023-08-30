@@ -1,8 +1,8 @@
 import * as S from './style'
 
-export default ({texto, value}:{texto:string, value?:boolean})=>{
+export default ({texto, value, onClick}:{texto:string, value?:boolean,  onClick:()=>void})=>{
     return (
-        <S.Container value={value}>
+        <S.Container value={value} onPress={onClick}>
             <S.Text>{texto}</S.Text>
         </S.Container>
     )

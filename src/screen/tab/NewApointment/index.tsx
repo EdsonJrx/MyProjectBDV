@@ -1,11 +1,24 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity} from 'react-native';
+import * as S from './style'
+import Button from '../../../components/button'
+import { useNavigation } from '@react-navigation/native';
+
 
 export default () => {
+    const navigation = useNavigation();
+
+    const handlerSave = () => {
+        navigation.goBack();
+    };
+    const handlerCancel = () => {
+        navigation.goBack();
+    };
+
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>New</Text>
-        </View>
+        <S.Container>
+            <Button texto={"Salvar"} value onClick = {handlerSave}/>
+            <Button texto={"Cancelar"} onClick = {handlerCancel}/>
+        </S.Container>
     );
     
 }
