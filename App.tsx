@@ -8,6 +8,9 @@ import UserContextProvider from './src/contexts/UserContext';
 
 import light from './src/theme/light';
 import dark from './src/theme/dark';
+import { LogBox } from 'react-native';
+
+LogBox.ignoreLogs(['Sending `onAnimatedValueUpdate`']);
 
 function App() {
   return (
