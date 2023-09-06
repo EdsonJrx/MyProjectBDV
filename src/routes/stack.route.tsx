@@ -3,7 +3,7 @@ import Login from '../screen/stack/Login'
 import { TabRoutes } from './tab.route';
 import Profile from '../screen/stack/Profile';
 import Preload from '../screen/stack/Preload';
-import NewApointment from '../screen/tab/NewApointment';
+import Camera from '../screen/stack/Picture';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,6 +11,7 @@ type StackNavigation = {
   login: undefined;
   home: undefined;
   profile: undefined;
+  camera: undefined;
 };
 export type StackTypes = NativeStackNavigationProp<StackNavigation>;
 
@@ -40,10 +41,18 @@ export function StackRoutes() {
       />
       <Stack.Screen
         name="profile"
-        component={Profile}
+        component={Camera}
         options={{
           title: 'Profile',
           headerBackVisible: true
+        }}
+      />
+      <Stack.Screen
+        name="camera"
+        component={Camera}
+        options={{
+          title: 'camera',
+          headerBackVisible: false
         }}
       />
       <Stack.Screen

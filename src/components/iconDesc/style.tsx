@@ -8,7 +8,6 @@ export const Container = styled.View`
 
 export const Icon = styled(MaterialCommunityIcons)`
     color:${({theme})=>theme.COLORS.PRIMARY_900};
-    size:28px;
 `;
 
 export const Text = styled.Text`
