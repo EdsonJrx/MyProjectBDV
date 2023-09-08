@@ -19,7 +19,27 @@ export default () => {
     const navigation = useNavigation();
 
     const scrollOffsetY = useRef(new Animated.Value(0)).current;
-    scrollOffsetY.addListener(changeTitle)
+    
+
+    // useEffect(() => {
+    //     const listener = scrollOffsetY.addListener(({ value }) => {
+    //         if (value <= 94) {
+    //             navigation.setOptions({
+    //                 title: ''
+    //             });
+    //         } else {
+    //             navigation.setOptions({
+    //                 title: 'BDVs'
+    //             });
+    //         }
+    //       console.log('Animated value changed:', value);
+    //     });
+    
+    //     // Certifique-se de remover o ouvinte quando o componente for desmontado
+    //     return () => {
+    //         scrollOffsetY.removeListener(listener);
+    //     };
+    //   }, []);
     
     const HeaderHeight = scrollOffsetY.interpolate({
         inputRange: [64, 94],
@@ -52,17 +72,18 @@ export default () => {
         //ListAppoints()
     },[])
     
-    function changeTitle ({value}: { value: number }){
-        if (value <= 94) {
-            navigation.setOptions({
-                title: ''
-            });
-        } else {
-            navigation.setOptions({
-                title: 'BDVs'
-            });
-        }
-    }
+    // function changeTitle ({value}: { value: number }){
+    //         console.log(value)
+    //     if (value <= 94) {
+    //         navigation.setOptions({
+    //             title: ''
+    //         });
+    //     } else {
+    //         navigation.setOptions({
+    //             title: 'BDVs'
+    //         });
+    //     }
+    // }
 
     function renderItem ({ item }:ListRenderItemInfo<IAppointments>){
         return <AppointmentList data={item} />
